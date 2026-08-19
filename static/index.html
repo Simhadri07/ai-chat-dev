@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat</title>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <!-- LEFT PANEL -->
+        <div class="left-panel">
+
+            <h2>AI Chat</h2>
+
+            <p class="subtitle">
+                Chat with OpenAI, Gemini, Claude or your local Ollama model.
+            </p>
+
+            <div class="row">
+
+                <label class="field-label">
+                    Provider
+                </label>
+
+                <select id="provider">
+
+                    <option value="local" selected>
+                        Local - Ollama
+                    </option>
+
+                    <option value="openai">
+                        Cloud - OpenAI
+                    </option>
+
+                    <option value="gemini">
+                        Cloud - Gemini
+                    </option>
+
+                    <option value="claude">
+                        Cloud - Claude
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="row">
+
+                <label class="field-label">
+                    API Key
+                </label>
+
+                <input
+                    id="apiKey"
+                    type="password"
+                    placeholder="Not required for Ollama">
+
+            </div>
+
+            <div class="row">
+
+                <label class="field-label">
+                    Model
+                </label>
+
+                <input
+                    id="model"
+                    value="qwen2.5-coder:1.5b"
+                    placeholder="Model name">
+
+            </div>
+
+            <div class="row">
+
+                <label class="field-label">
+                    Prompt
+                </label>
+
+                <textarea
+                    id="prompt"
+                    placeholder="Ask anything..."></textarea>
+
+            </div>
+
+            <div class="buttons">
+
+                <button id="sendButton">
+                    🚀 Send Message
+                </button>
+
+                <button id="checkButton">
+                    🔌 Check Connection
+                </button>
+
+                <button id="clearButton">
+                    🗑 Clear Chat
+                </button>
+
+            </div>
+
+            <div id="status" class="status">
+                Ready.
+            </div>
+
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+
+            <div class="chat-header">
+
+                <div>
+
+                    <div class="chat-title">
+                        Conversation
+                    </div>
+
+                    <div class="chat-subtitle">
+                        AI responses will appear here
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="messages" class="messages">
+
+                <div class="msg assistant">
+                    👋 Welcome! Select a provider, enter your prompt on the left, and click <strong>Send Message</strong>.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/script.js"></script>
+
+</body>
+</html>
